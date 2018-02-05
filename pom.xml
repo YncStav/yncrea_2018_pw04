@@ -11,6 +11,7 @@
     
     <modules>
         <module>pw04-core</module>
+        <module>pw04-web</module>
     </modules>
 
     
