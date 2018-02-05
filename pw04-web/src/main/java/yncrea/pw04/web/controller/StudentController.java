@@ -3,6 +3,7 @@ package yncrea.pw04.web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import yncrea.pw04.entity.Student;
@@ -32,5 +33,11 @@ public class StudentController {
     public String submitForm(@ModelAttribute("student") Student student){
         this.studentService.saveStudent(student);
         return "redirect:list";
+    }
+
+    @RequestMapping(path = "/{student}/delete")
+    public String deleteStudent(@PathVariable("student") Long student){
+        this.studentService.deleteStudent(student);
+        return "redirect:../list";
     }
 }

@@ -16,29 +16,32 @@ public class StudentServiceImpl implements StudentService {
     @Inject
     private StudentDAO studentDAO;
 
-    @Override
+
     public List<Student> findByLastname(final String lastname) {
        return studentDAO.findByLastname(lastname);
     }
 
 
-    @Override
+
     public void saveStudent(final Student student) {
         studentDAO.save(student);
     }
 
 
-    @Override
+
     public List<Student> findAllWithCourses() {
         return studentDAO.findAllWithCourses();
     }
 
 
-    @Override
+
     public List<Student> findAll() {
        return studentDAO.findAll();
     }
 
 
+    public void deleteStudent(Long student){
+        this.studentDAO.delete(student);
+    }
 
 }

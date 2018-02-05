@@ -13,4 +13,6 @@ public interface StudentService {
     List<Student> findAll();
 
     List<Student> findAllWithCourses();
+
+    void deleteStudent(Long student);
 }
